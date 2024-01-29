@@ -1,13 +1,12 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-
   return (
     <>
-    Kanban Board
-      </>
-  )
+      <div>Kanban Board</div>
+    </>
+  );
 }
 
-export default App
+export default App;
