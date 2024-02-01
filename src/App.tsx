@@ -9,24 +9,35 @@ import ErrorPage from "./Pages/ErrorPage";
 
 import AboutPage from "./Pages/AboutPage";
 import ItemDetails from "./Pages/ItemDetails";
+import List from "./Pages/List";
 
 import "./App.css";
 
 function App() {
   return (
-    <>
+    <div className="flex flex-col h-full min-h-screen overflow-hidden">
       <Navbar />
-      <Sidebar />
 
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/About" element={<AboutPage />} />
-        <Route path="/Details" element={<ItemDetails />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
+      <div className="flex-grow grid grid-cols-12 gap-4">
+        <div className="col-span-3">
+          <Sidebar />
+        </div>
 
-      <Footer />
-    </>
+        <div className="col-span-9">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/list" element={<List />} />
+            <Route path="/details" element={<ItemDetails />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </div>
+      </div>
+
+      <div className="relative">
+        <Footer />
+      </div>
+    </div>
   );
 }
 

@@ -17,23 +17,16 @@ const Navbar = () => {
           </div>
           <div className="flex">
             <div className="ml-4">
-              <Link to="/">
+              <Link to="/settings">
                 <button className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
-                  Dashboard
+                  Settings
                 </button>
               </Link>
             </div>
             <div className="ml-4">
-              <Link to="/About">
+              <Link to="/account">
                 <button className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
-                  About
-                </button>
-              </Link>
-            </div>
-            <div className="ml-4">
-              <Link to="/Details">
-                <button className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
-                  List
+                  Account
                 </button>
               </Link>
             </div>

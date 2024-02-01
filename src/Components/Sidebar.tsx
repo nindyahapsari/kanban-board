@@ -1,19 +1,22 @@
-
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
-    return (
-        <div className="bg-gray-200 w-64 h-screen">
-            <ul className="p-4">
-                <li className="mb-2">
-                    <a href="#" className="text-gray-700 hover:text-gray-900">Option 1</a>
-                </li>
-                <li className="mb-2">
-                    <a href="#" className="text-gray-700 hover:text-gray-900">Option 2</a>
-                </li>
-            </ul>
-        </div>
-    );
+  return (
+    <div className=" w-64 h-screen">
+      <ul className="p-4">
+        <li className="mb-2">
+          <Link to="/">Dashboard</Link>
+        </li>
+        <li className="mb-2">
+          <Link to="/about">About</Link>
+        </li>
+        <li className="mb-2">
+          <Link to="/list">List</Link>
+        </li>
+      </ul>
+    </div>
+  );
 };
 
 export default Sidebar;
