@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const navbarStyle = {
   border: "2px solid #222222;",
@@ -16,14 +17,25 @@ const Navbar = () => {
           </div>
           <div className="flex">
             <div className="ml-4">
-              <button className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
-                Option 1
-              </button>
+              <Link to="/">
+                <button className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+                  Dashboard
+                </button>
+              </Link>
             </div>
             <div className="ml-4">
-              <button className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
-                Option 2
-              </button>
+              <Link to="/About">
+                <button className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+                  About
+                </button>
+              </Link>
+            </div>
+            <div className="ml-4">
+              <Link to="/Details">
+                <button className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+                  List
+                </button>
+              </Link>
             </div>
           </div>
         </div>
