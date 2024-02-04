@@ -19,11 +19,11 @@ function App() {
       <Navbar />
 
       <div className="flex-grow grid grid-cols-12 gap-4">
-        <div className="col-span-3">
+        <div className="col-span-2">
           <Sidebar />
         </div>
 
-        <div className="col-span-9">
+        <div className="col-span-10">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/about" element={<AboutPage />} />

@@ -30,8 +30,8 @@ const List = () => {
   }, []);
 
   return (
-    <div className="flex flex-row justify-evenly p-10 h-full overflow-x-scroll bg-gray-200">
-      <div className="border border-solid bg-gray-100 border-blue-600 h-full mx-2">
+    <div className="flex flex-row p-10 h-full overflow-x-scroll bg-gray-200">
+      <div className="border border-solid bg-gray-100 border-blue-600 h-full mx-2 px-5">
         <div className="m-2 text-left">
           <h3 className="text-xl">
             To do
@@ -43,7 +43,7 @@ const List = () => {
         <ListCard />
       </div>
 
-      <div className="border border-solid bg-gray-100 border-blue-600 h-full mx-2">
+      <div className="border border-solid bg-gray-100 border-blue-600 h-full mx-2 px-5">
         <div className="m-2 text-left">
           <h3 className="text-xl">
             In Progress
