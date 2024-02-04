@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import socketIO from "socket.io-client";
 
 import Navbar from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
@@ -12,6 +13,12 @@ import ItemDetails from "./Pages/ItemDetails";
 import List from "./Pages/List";
 
 import "./App.css";
+
+import { io } from "socket.io-client";
+
+const socket = io("http://localhost:4000");
+
+socket.emit("customEvent", { myData: "hello socket" });
 
 function App() {
   return (
@@ -27,7 +34,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/list" element={<List />} />
+            <Route path="/list" element={<List socket={socket} />} />
             <Route path="/details" element={<ItemDetails />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
