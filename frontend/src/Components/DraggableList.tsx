@@ -3,11 +3,11 @@ import { Droppable, Draggable } from "react-beautiful-dnd";
 
 import ListCard from "../Components/ListCard";
 
-const DraggableList = ({ data }) => {
+const DraggableList = ({ data, boardTitle }) => {
   return (
     <div>
       {data.map((each, index) => (
-        <Droppable droppableId={each.id}>
+        <Droppable key={index} droppableId={boardTitle}>
           {(provided) => (
             <div ref={provided.innerRef} {...provided.droppableProps}>
               <Draggable key={each.id} draggableId={each.id} index={index}>

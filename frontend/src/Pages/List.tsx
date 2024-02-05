@@ -52,6 +52,12 @@ const List = ({ socket }) => {
     fetchTask();
   }, []);
 
+  useEffect(() => {
+    socket.on("tasks", (newTasks) => setTasks(newTasks));
+  }, [socket]);
+
+  console.log(tasks);
+
   const handleAddTodoData = (e) => {
     e.preventDefault();
     // console.log("handleAddTodo");
@@ -77,14 +83,17 @@ const List = ({ socket }) => {
     <div className="flex flex-row p-10 h-full overflow-x-scroll bg-gray-200">
       <DragDropContext onDragEnd={handleDragEnd}>
         {Object.entries(tasks).map((task) => (
-          <div className="border border-solid bg-gray-100 h-full mx-2 px-5">
+          <div
+            key={task[1].items.id}
+            className="border border-solid bg-gray-100 h-full mx-2 px-5"
+          >
             <div className="m-2 text-left">
               <h3 className="text-xl">
                 {task[1].title}
                 <span className="text-lg mx-2">{task[1].items.length}</span>
               </h3>
             </div>
-            <DraggableList data={task[1].items} />
+            <DraggableList data={task[1].items} boardTitle={task[1].title} />
           </div>
         ))}
       </DragDropContext>
