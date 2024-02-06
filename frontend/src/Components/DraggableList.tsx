@@ -3,11 +3,12 @@ import { Droppable, Draggable } from "react-beautiful-dnd";
 
 import ListCard from "../Components/ListCard";
 
-const DraggableList = ({ data, boardTitle }) => {
+//UNUSED FOR NOW!
+
+const DraggableList = ({ data }) => {
   return (
-    <div>
+    <>
       {data.map((each, index) => (
-        <Droppable key={index} droppableId={boardTitle}>
           {(provided) => (
             <div ref={provided.innerRef} {...provided.droppableProps}>
               <Draggable key={each.id} draggableId={each.id} index={index}>
@@ -30,9 +31,8 @@ const DraggableList = ({ data, boardTitle }) => {
               {provided.placeholder}
             </div>
           )}
-        </Droppable>
       ))}
-    </div>
+    </>
   );
 };
 
